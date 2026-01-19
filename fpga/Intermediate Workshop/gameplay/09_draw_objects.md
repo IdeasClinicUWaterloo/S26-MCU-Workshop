@@ -24,7 +24,7 @@ As you map the ports, here are some things to keep in mind:
 
 Here is a block diagram for `game_logic` you may find useful: 
 
-![Game logic block diagram](../assets/game_logic_block_diagram.png)
+![Game logic block diagram](../assets/instatiated_game_logic_block_diagram.png)
 
 
 ### 3. Wire `game_logic` Signals into `renderer` in `hdmi_top.vhd`
