@@ -34,6 +34,11 @@ end if;
 
 -- clamp paddle positions to prevent them from extending beyond the screen
 ````
+
+As you do this, here are some things to keep in mind: 
+- Because in VHDL, out ports cannot be read inside a component, so updates must be performed on the internal variables: `ply_n` and `pry_n`
+- Updates the paddle position by incrementing the internal paddle variables by the paddle velocity: `PADDLE_V`
+
 #### Helpful note
 
 You can use the clamp function in the architecture to bound a number between two values, like so: 
