@@ -63,6 +63,12 @@ Refer to Figure 8 for the circuit’s wiring.
 
 
 ## Add your Code
+
+> [!NOTE]
+> To view output sent back by the board in a terminal window, open the **Serial Monitor** in the Arduino IDE.
+> On the top menu bar, select "Tools > Serial Monitor" or press CTRL+SHIFT+M on Windows.
+> You will need to use the serial monitor to see the results of `Serial.println` statements.
+
 Once again, the code is provided for you. There is no special configuration is required - just open the Arduino IDE and paste this code into a new sketch/project:
 
 ### Definitions
