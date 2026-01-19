@@ -65,7 +65,11 @@ Now you’re ready to create the project (aka sketch) and write the code to cont
 
 ## Add your Code
 
-Now it’s time to write your code. We’ve written it for you this time, so please copy and paste this code into the Arduino IDE:
+Now it’s time to write your code.
+We’ve written it for you this time, so please:
+
+1. Make sure that your sketch contains the contents of the [`skeleton.ino`](skeleton.ino) file.
+2. Copy and paste this code into each section of the skeleton in the Arduino IDE:
 
 ### Definitions
 ```cpp
