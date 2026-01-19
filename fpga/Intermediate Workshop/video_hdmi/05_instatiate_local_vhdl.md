@@ -98,13 +98,15 @@ Use the same steps that we went through for `video_timing` to instantiate `rende
 
 We will set `clk` and `reset` for `renderer` the same way we did it for `video_timing` and `i2c_config`. 
 
+As you do this, here are some things to keep in mind:
+
+- Remember to create the output signal for `rgb` of type STD_LOGIC_VECTOR(23 downto 0).
+- Notice in the block diagram below that the signals for the inputs of `renderer` are the same signals used in the outputs for `video_timing`. 
+
+
 Here is the block diagram for `renderer` to help you:
 
 ![Renderer block diagram](../assets/renderer_block_diagram.png)
-
-Notice how the signals for the inputs of `renderer` are the same signals used in the outputs for `video_timing`. 
-
-**Remember to create the output signal for `rgb` of type STD_LOGIC_VECTOR(23 downto 0).** 
 
 #### Ignore all game logic signals for now
 

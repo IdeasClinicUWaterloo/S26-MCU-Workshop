@@ -107,13 +107,12 @@ test_rect : rect_display
   );
 ````
 
+As you do this, here are some things to keep in mind:
+- You can directory assign numeric values to the `x1`, `x2`, `y1`, and `y2` signals to draw your rectangle. 
+
 Here is the block diagram that you may find useful: 
 
 ![Renderer block diagram for rect_test](../assets/rect_test_block_diagram.png)
-
-#### Helpful note
-
-You can directory assign numeric values to the `x1`, `x2`, `y1`, and `y2` signals to draw your rectangle. 
 
 ### 2.4 Use lit to draw the rectangle
 
