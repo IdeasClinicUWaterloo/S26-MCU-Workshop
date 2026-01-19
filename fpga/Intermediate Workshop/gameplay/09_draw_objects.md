@@ -20,7 +20,8 @@ As you map the ports, here are some things to keep in mind:
 - `clk`: the PLL 74MHz clock signal 
 - `game_clk`: our `frame_start` signal from the `video_timing` component 
 - `reset`: `(not pll_locked) or reset` (we don’t want to run game logic until the PLL is back after a reset) 
-- `pl_up`, `pl_dn`, `pr_up`, `pr_dn` should map to `not key(3)`, `not key(2)`, `not key(1)`, `not key(0)`, respectively 
+- `pl_up`, `pl_dn`, `pr_up`, `pr_dn` should map to `not key(3)`, `not key(2)`, `not key(1)`, `not key(0)`, respectively
+- Remember to actually create the internal signals for `pl_y`, `pr_y`, `ball_x`, and `ball_y` of type INTEGER and `score_l` and `score_r` of type NATURAL
 
 Here is a block diagram for `game_logic` you may find useful: 
 
@@ -62,7 +63,7 @@ You need to uncomment all the lines of code which include:
 
 Still in `renderer.vhd`, go to down to its **process**.  Write logic to draw the paddles and ball.
 
-You need to use `on_pl`, `on_pr`, and `on_ball`. You should follow the same approach you used in previously to draw the test rectangle.
+You need to use `on_scorel`, `on_scorer`, `on_pl`, `on_pr`, and `on_ball`. You should follow the same approach you used in previously to draw the test rectangle.
 
 ### 6. Compile and Verify 
 
