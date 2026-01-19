@@ -37,7 +37,7 @@ end if;
 
 As you do this, here are some things to keep in mind: 
 - Because in VHDL, out ports cannot be read inside a component, so updates must be performed on the internal variables: `ply_n` and `pry_n`
-- Updates the paddle position by incrementing the internal paddle variables by the paddle velocity: `PADDLE_V`
+- You need to update the paddle position by incrementing the internal paddle variables by the paddle velocity: `PADDLE_V`
 
 #### Helpful note
 
