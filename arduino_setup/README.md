@@ -38,7 +38,13 @@ We will use the generic Linux format in these instructions.
 
 
 ### macOS
-TBD
+
+1. Download the Arduino IDE.
+   - If you are using an Intel-based Mac, download the [`arduino-ide_2.3.7_macOS_64bit.dmg`](https://github.com/arduino/arduino-ide/releases/download/2.3.7/arduino-ide_2.3.7_macOS_64bit.dmg) file.
+   - If you are using an M-series Mac, download the [`arduino-ide_2.3.7_macOS_arm64.dmg`](https://github.com/arduino/arduino-ide/releases/download/2.3.7/arduino-ide_2.3.7_macOS_arm64.dmg)
+2. Wait for the DMG to download, then double click the file. It should extract and show "Arduino IDE".
+3. Copy the Arduino IDE file to your user Applications folder. It should now appear in Launchpad.
+4. Double click on the Arduino IDE icon to run.
 
 
 ## Configuring the IDE for our specific board (UNO R4)
