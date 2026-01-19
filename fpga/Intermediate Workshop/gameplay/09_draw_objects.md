@@ -23,10 +23,26 @@ As you map the ports, here are some things to keep in mind:
 - `pl_up`, `pl_dn`, `pr_up`, `pr_dn` should map to `not key(3)`, `not key(2)`, `not key(1)`, `not key(0)`, respectively
 - Remember to actually create the internal signals for `pl_y`, `pr_y`, `ball_x`, and `ball_y` of type INTEGER and `score_l` and `score_r` of type NATURAL
 
+#### Helpful Note
+
+You should have the following signals in your `game_logic` instatiation statement: 
+- `clk`
+- `game_clk`
+- `reset` 
+- `pl_up`
+- `pl_dn`
+- `pr_up`
+- `pr_dn`
+- `pl_y`
+- `pr_y` 
+- `ball_x` 
+- `ball_y`
+- `score_l`
+- `score_r`
+
 Here is a block diagram for `game_logic` you may find useful: 
 
 ![Game logic block diagram](../assets/instatiated_game_logic_block_diagram.png)
-
 
 ### 3. Wire `game_logic` Signals into `renderer` in `hdmi_top.vhd`
 
@@ -67,7 +83,7 @@ You need to use `on_scorel`, `on_scorer`, `on_pl`, `on_pr`, and `on_ball`. You s
 
 ### 6. Compile and Verify 
 
-Compile and upload your code. This may take a while. If you followed the steps successfully then you should be displaying the shapes for our pong game.
+Compile and upload your code. This may take a while (10-12 mins). If you followed the steps successfully then you should be displaying the shapes for our pong game.
 
 ---
 |Back: [Overview: Pong Game Play](08_gameplay_overview.md)| [Top](../README.md) |Next: [Implement Paddle Movement](10_paddle_movement.md)|
