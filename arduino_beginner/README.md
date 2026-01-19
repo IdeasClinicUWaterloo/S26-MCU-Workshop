@@ -31,8 +31,16 @@ scopes.
 - 1 Arduino Uno
 - Assorted Wires
 
-### Note on computer architecture: 
-If you happen to be using an ARM based Windows machine, you will most likely be unable to proceed on your device. Please either partner up with someone who uses a different microarchitecture, or request an IdeasClinic laptop from the instructional team.
+### Note on computer compatibility
+The Arduino IDE does not support Windows operating systems running on a computer with the `ARM64` processor architecture. To check what your processor is on Windows, one way is to type the following into Command Prompt:
+
+``` shell
+echo %PROCESSOR_ARCHITECTURE%
+```
+
+This should give you one of `AMD64`, `IA64`, or `ARM64` as a reply.
+If you get `ARM64`, you will most likely be unable to proceed on your device.
+Please either partner up with someone, or request an IdeasClinic laptop from the instructional team.
 
 # Table of Contents
 

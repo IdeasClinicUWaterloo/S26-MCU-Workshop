@@ -2,34 +2,40 @@
 
 In this task you will control an LED with a button. When the button is pressed, the LED will turn on, and when the button is released, the LED will turn off. Figure 7 shows the circuit you’re going to build:
 
-![Figure 7, LED - Pushbutton Circuit](../../assets/led_pb_circuit.png)
+![Figure 1, LED - Pushbutton Circuit](../../assets/led_pb_circuit.png)
 
-*Figure 7, LED - Pushbutton Circuit*
-
+*Figure 1, LED - Pushbutton Circuit*
 
 Here’s how the circuit works:
 
-1.	The button is connected between the 5V power rail and a digital input pin (e.g., pin 2). When the button is pressed, the pin is connected directly to 5V, and the Arduino will read the pin as “High”. 
+1.	The button is connected between the 3V3 power rail and a digital input pin (e.g., pin 2). When the button is pressed, the pin is connected directly to 3.3 V, and the Arduino will read the pin as “High”. 
 2.	When the button is not pressed, the pin is tied to ground through the 10kΩ pull-down resistor between the input pin and GND. This ensures the input pin not floating when the button is not pressed.
 3.	The LED is connected in series with a current-limiting resistor to prevent it from burning out. The resistor connects to a digital output pin, which can be toggled HIGH or LOW to turn the LED on or off. Note that the LED must be oriented correctly, with the longer leg (anode) connected to the resistor (and then to the digital output), and the shorter leg (cathode) connected to GND. If you flip the LED, it will not light up.
 
+## Build your Circuit
 
-## 1 Build your Circuit
+If you've never used a breadboard before, please refer to Figure 2 and follow these instructions.
+*We are here to help clarify any of these steps. Please ask us if you would like!*
 
-If you’ve never used a breadboard before, please refer to Figure 8 and follow these instructions:
+1. Place the push button on the breadboard straddling the centre divider.
+   **To wire up the push button correctly:**
+   1. Connect one push button leg to the breadboard's power rail with a red wire.
+   2. Using a resistor as a "bridge," connect the other push button leg through the resistor to the ground rail.
 
-1.	Place the push button on the breadboard straddling the centre divider
-    - Connect one of its legs to the breadboard’s power rail with a red wire
-    - Connect its other leg to one leg of the 10 kΩ resistor (brown, black, orange). Put the resistor’s other leg in a different row
-    - Connect the resistor’s other leg to the breadboard’s ground rail with a black wire
-2.	Place the LED on the breadboard
-    - Connect the LED’s cathode (shorter leg) to the breadboard’s ground rail (black wire)
-    - Connect the LED’s anode (longer leg) to one end of the 220 Ω resistor (red, red, brown). Put the resistor’s other leg in a different row
+> [!NOTE]
+> The resistor, named a pull-down resistor, is there to limit the amount of current which flows to ground while the push button is activated (this is a consequence of how this circuit was designed). Any current which flows past the resistor while the push button is activated is strictly energy wasted, but it is an acceptable tradeoff because the button will not be activated often and the current is very small.
+> How much power would be dissapated by the resistor while the push button is pressed?
+
+2.	Place the LED on the breadboard.
+    **To wire up the LED correctly:**
+    1. Connect the LED’s cathode (shorter leg) to the breadboard’s ground rail (black wire)
+    2. Connect the LED’s anode (longer leg) to one end of the 220 Ω resistor (red, red, brown).
+       Put the resistor’s other leg in a different row.
 3.	Connect the circuit to the Arduino Uno
-    - connect the other pushbutton lead to digital pin 2 
-    - connect the other leg of the 220 Ω resistor to digital pin 3 
-    - connect the breadboard’s power rail to the 5V pin on the Arduino with a red wire
-    - connect the ground rail to the Arduino’s GND pin with a black wire
+    1. Connect the pushbutton's unconnected lead to digital pin 2 (this is the green wire in Figure 2).
+    2. Connect the 220 Ω resistor's unconnected leg to digital pin 3 (this is the blue wire in Figure 2).
+    3. Connect the breadboard’s power rail to the 5V pin on the Arduino with a red wire
+    4. Connect the ground rail to the Arduino’s GND pin with a black wire
 4.	Double check your connections 
     - Arduino’s 5V to the power rail
     - Breadboard’s power rail to the pushbutton
@@ -40,11 +46,11 @@ If you’ve never used a breadboard before, please refer to Figure 8 and follow 
     - LED’s cathode (shorter leg) to the breadboard’s ground rail
     - Ground rail to Arduino’s GND
 
-![Figure 8, Sample Layout  for Pushbutton and LED](../../assets/sample_layout_pb_led.png)
+![Figure 2, Sample Layout  for Pushbutton and LED](../../assets/sample_layout_pb_led.png)
 
-*Figure 8, Sample Layout  for Pushbutton and LED*
+*Figure 2, Sample Layout for Pushbutton and LED*
 
-## 2 Create Your Project (Sketch)
+## Create Your Project (Sketch)
 
 Now you’re ready to create the project (aka sketch) and write the code to control your system. Follow these steps:
 
@@ -53,28 +59,31 @@ Now you’re ready to create the project (aka sketch) and write the code to cont
 3. Click **File** > **Save As** and name your project (e.g. learningArduino.ino). It’s a good habit to avoid spaces or special characters in the file name.
 
 
-![Figure 9, Creating a New Project](../../assets//creating_new_project.png)
+![Figure 3, Creating a New Project](../../assets//creating_new_project.png)
 
-*Figure 9, Creating a New Project*
+*Figure 3, Creating a New Project*
 
-## 3 Add your Code
+## Add your Code
 
 Now it’s time to write your code. We’ve written it for you this time, so please copy and paste this code into the Arduino IDE:
 
 ### Definitions
-````cpp
+```cpp
+// Definitions
 const int buttonPin = 3;
 const int ledPin = 2;
-````
+```
 
 ### Setup
-````cpp
+```cpp
+// Setup
 pinMode(buttonPin, INPUT); 
 pinMode(ledPin, OUTPUT);
-````
+```
 
 ### Loop
-````cpp
+```cpp
+// Loop
 int state = digitalRead(buttonPin);
 if (state == HIGH) {
     digitalWrite(ledPin, HIGH);
@@ -83,7 +92,21 @@ if (state == HIGH) {
     digitalWrite(ledPin, LOW);
 
 }
-````
+```
+
+> [!NOTE]
+> It's a good practice to add comments to your code.
+> Add a comment by adding two forward slashes (`//`) in your code.
+> Any characters following the two slashes in that line are part of the comment.
+>
+> Block comments are a different type of comment.
+> Create one by wrapping content in an opening `/*` and a closing `*/`.
+> All enclosed characters are then part of the comment.
+> ```
+>  /* This
+>  comment may span multiple lines
+>  */
+> ```
 
 Here’s an explanation of the code:
 
@@ -100,7 +123,9 @@ Here’s an explanation of the code:
     - If the button is pressed, digitalWrite(ledPin, HIGH); turns the LED on.
     - If the button is not pressed, digitalWrite(ledPin, LOW); turns the LED off.
 
-## 5 Test your Circuit
+
+## Test your Circuit
+
 The system is working correctly if:
 1.	The LED turns on when the pushbutton is pressed
 2.	The LED turns off when the pushbutton is released
@@ -108,11 +133,12 @@ The system is working correctly if:
 You can test this by pressing and holding the button — the LED should remain lit for as long as the button is held down. When you release the button, the LED should turn off immediately. If this behavior does not occur, double-check the wiring of your button, LED, resistor, and the code logic. Ensure that the button pin is properly pulled down using a resistor (typically 10kΩ as discussed in Section 1) to avoid a floating input.
 
 
-## 6 Aside - Multimeters
+## Aside - Multimeters
 
 A multimeter is a valuable tool for debugging and exploring how electricity flows in a circuit. Whether you’re using a handheld multimeter or a bench/tabletop multimeter, the basic functions are the same. Here’s how to measure resistance, voltage, and current in this project:
 
-### 6a - Measuring Resistance
+
+### Measuring Resistance
 
 1.	Power off your Arduino.
 2.	Disconnect one leg of the resistor from the breadboard to avoid interference from the circuit.
@@ -122,11 +148,11 @@ A multimeter is a valuable tool for debugging and exploring how electricity flow
 
 **Tip:** Handheld multimeters may require manual range setting, while tabletop multimeters often auto-range and may give more precise decimal values.
 
-![Figure 10, Measuring Resistance](../../assets/measuring_resistance.png)
+![Figure 4, Measuring Resistance](../../assets/measuring_resistance.png)
 
-*Figure 10, Measuring Resistance*
+*Figure 4, Measuring Resistance*
 
-### 6b - Measuring Voltage
+### Measuring Voltage
 
 1.	Keep the circuit powered by uploading the Arduino code and pressing the button.
 2.	Set the dial to DC Voltage (V⎓).
@@ -136,12 +162,12 @@ A multimeter is a valuable tool for debugging and exploring how electricity flow
     - ~2V across the LED (its voltage drop)
 
 
-![Figure 11, Measuring Voltage](../../assets/measuring_voltage.png)
+![Figure 5, Measuring Voltage](../../assets/measuring_voltage.png)
 
-*Figure 11, Measuring Voltage*
+*Figure 5, Measuring Voltage*
 
 
-### 6c - Measuring Current
+### Measuring Current
 **Important:** You must connect the multimeter in series, not parallel!
 
 1.	Turn off power.
@@ -152,9 +178,9 @@ A multimeter is a valuable tool for debugging and exploring how electricity flow
 5.	Connect the red probe to digital pin 2, and the black to the resistor leg (or the now free end of the wire going to the resistor).
 6.	Power on and press the button - you should read about 10 - 15 mA.
 
-![Figure 12, Measuring Current](../../assets/measuring_current.png)
+![Figure 6, Measuring Current](../../assets/measuring_current.png)
 
-*Figure 12, Measuring Current*
+*Figure 6, Measuring Current*
 
 Multimeters are essential tools for electronics — the earlier you get comfortable using one, the more confident you’ll be in building and troubleshooting your circuits!
 

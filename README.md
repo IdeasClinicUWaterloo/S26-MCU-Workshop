@@ -7,6 +7,7 @@ Please take a look at our setup instructions before starting our workshops:
 - [MCU workshops: learn how to configure Arduino IDE here](arduino_setup/README.md)
 - [FPGA workshops: learn how to configure Quartus Prime Lite IDE here](quartus_setup/README.md)
 
-The workshop is divided into chapters.
+Then, pleease click to access a specific workshop:
 
-- [Click here to start the Arduino Intermediate Workshop](arduino_intermediate/README.md)
+- [Arduino Introductory Workshop](arduino_beginner/README.md)
+- [Arduino Intermediate Workshop](arduino_intermediate/README.md)
