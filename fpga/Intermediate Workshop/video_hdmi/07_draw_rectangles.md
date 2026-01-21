@@ -19,7 +19,7 @@ In this coordinate system, `(0,0)` is the top-left corner of the screen. The x-a
 
 ### 1. Create `rect_display.vhd`
 
-In Quartus, create a new VHDL file in the current project called `rect_display.vhd`. If you have forgotten how to create new VHDL refer to the Create a New VHDL File sectioin [here](../../Introductory%20Workshop/01_project_setup.md#create-a-new-vhdl-file). 
+In Quartus, create a new VHDL file in the current project called `rect_display.vhd`. If you have forgotten how to create new VHDL refer to the Create a New VHDL File section [here](../../Introductory%20Workshop/01_project_setup.md#create-a-new-vhdl-file). 
 
 ### 2. Write VHDL for `rect_display` 
 
