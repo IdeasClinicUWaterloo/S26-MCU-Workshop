@@ -1,4 +1,4 @@
-# Add Phase-Locked Loop to Top-Level File
+# Instantiating Components
 
 In this step, you will add the Phase-Locked Loop (PLL) IP core to the top-level file: `hdmi_top.vhd` so that the system can generate the 74.25 MHz pixel clock required for HDMI output.
 
@@ -31,7 +31,7 @@ In `hdmi_top.vhd`, the architecture body consists of:
 
 In the **declaration section** of the architecture body, add the following component definition. This informs Quartus that, somewhere in our project, there’s a component named `pll_74mhz` with two input ports and two output ports of the STD_LOGIC type. 
 
-This can be copied and pasted into the coresponding section: 
+This can be copied and pasted into the declaration section: 
 ````VHDL
 -- pll_74mhz component definition
 component pll_74mhz is
@@ -47,7 +47,7 @@ end component;
 
 Still in the **declaration section**, add internal signals to connect to the PLL. 
 
-This can be copied and pasted into the corresponding section: 
+This can be copied and pasted into the declaration section: 
 ````VHDL
 -- pll_74mhz signals
 signal reset : STD_LOGIC;      -- resets input to the PLL
@@ -61,7 +61,7 @@ If you have forgotten signals in VHDL, you can refer to the [Introductory FPGA W
 
 Since `reset` is an input to our PLL clock, we must drive it ourselves. In the **logic section**, drive the reset to the opposite value of `cpu_reset_n`, since the default behavior of the reset button is active-low.
 
-This can be copied and pasted into the corresponding section: 
+This can be copied and pasted into the logic section: 
 ````VHDL
 -- drive reset active-high 
 reset <= not cpu_reset_n;
@@ -69,7 +69,7 @@ reset <= not cpu_reset_n;
 
 ### 4. Instantiate the PLL
 
-In the **logic section** (i.e., after the begin keyword), copy and paste this instatiation: 
+In the **logic section** (i.e., after the begin keyword), copy and paste this instantiation: 
 
 ````VHDL
 -- pll_74mhz instantiation
@@ -91,8 +91,8 @@ Open the RTL Viewer in Quartus and inspect the generated hardware connections:
 
 ![PLL block diagram](../assets/pll_block_diagram.png)
 
-If you have forgotten how to use the RTL viewer in Quartus, you can refer to the [Introductory FPGA Workshop](../../Introductory%20Workshop/Activities/activity_1.md#helpful-tip). 
+If you have forgotten how to use the RTL viewer in Quartus, you can refer to the Helpful tip section in [Introductory FPGA Workshop](../../Introductory%20Workshop/Activities/activity_1.md#helpful-tip). 
 
 ---
-|Back: [Overview: Setting Up Video over HDMI](03_video_hdmi_overview.md) | [Top](../README.md) |Next: [Add Local VHDL files to Top-Level File](05_instatiate_local_vhdl.md)|
+|Back: [Overview: Setting Up Video over HDMI](03_video_hdmi_overview.md) | [Top](../README.md) |Next: [Instantiating Entities](05_instatiate_local_vhdl.md)|
 |---|---|---|

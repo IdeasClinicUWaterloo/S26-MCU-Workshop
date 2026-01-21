@@ -7,9 +7,13 @@ Before we do anything, you need to download and open the skeleton project in Qua
 ## 1. Download the ZIP file
 To begin the workshop, download and unzip the skeleton project file, that is available [here](../FPGA%20Pong%20Game%20Skeleton.zip).
 
+**Note:** GitHub may display a message saying the file is too large to preview, but this is expected so you can feel free to ignore and continue to download the file.
+
+![Zip file directory in GitHub](../assets/zip_file_directory.png)
+
 Click the **Download** button in the top-right corner to download the ZIP file.
 
-![Download button in Github](../assets/download_btn.png)
+![Download button in GitHub](../assets/download_btn.png)
 
 ## 2. Open the Project
 
@@ -23,8 +27,6 @@ The file explorer in Quatus should look like this:
 
 More information about what each file does and how they work will be shared as we go through this workshop. 
 
-For those interested in learning more, feel free to examine the VHDL files and these [appendices](../appendices/). 
-
 ---
-|Back: [Introduction](../README.md) | [Top](../README.md) |Next: [Phase-Locked Loop IP core](02_phase_locked_loop.md)|
+|Back: [Introduction](../README.md) | [Top](../README.md) |Next: [IP Core - Phase-Locked Loop](02_phase_locked_loop.md)|
 |---|---|---|
