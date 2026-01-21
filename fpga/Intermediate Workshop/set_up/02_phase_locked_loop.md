@@ -1,6 +1,6 @@
 # IP Core - Phase-Locked Loop
 
-In this part, we will learn how to set up an IP core from the Altera IP library. An IP core is a pre-built component that can be used in a project. In VHDL, a component defines an interface for a module of code. This will be explained more in detail as we go further into this workshop. 
+In this part, we will learn how to set up an IP core from the Altera IP library. An IP core is a pre-built component that can be used in a project. This will be explained more in detail as we go  through this workshop. 
 
 ## What is an IP Core?
 Intellectual property (IP) cores are reusable logic components for use in FPGA/IC/ASIC design that are the intellectual property of another party. 
