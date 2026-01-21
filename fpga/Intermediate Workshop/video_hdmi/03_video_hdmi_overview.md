@@ -1,6 +1,6 @@
 # Overview: Setting Up Video over HDMI
 
-Before we can build the game logic for Pong, we first need to configure the system to display graphics over HDMI. This section provides an overview of how we will use pre-built VHDL modules to show video over HDMI.
+Before we can build the game logic for Pong, we first need to configure the system to display graphics over HDMI. This section provides an overview of how we will use pre-built VHDL components to show video over HDMI.
 
 ## What is Logic Reuse in VHDL?
 
@@ -15,13 +15,13 @@ In the provided skeleton for this project, several subsystems are already implem
 - I2C communication
 - Pixel rendering
 
-These subsystems are all connected together by a top-level file: `hdmi_top.vhd`, which acts as a wrapper for all these modules.
+These subsystems are all connected together by a top-level file: `hdmi_top.vhd`, which acts as a wrapper for all these modules. A wrapper calls all of our separate modules and connects them together in one place.  
 
 Although these modules are pre-written, feel free to refer to the [appendices](../appendices/) for a deeper understanding of how the code works.
 
 ---
-The first step in building the Pong game is to set up HDMI output. This requires instantiating the PLL IP core (`pll_74mhz`) and `video_timing`, `i2c_config`, and `renderer` in the top-level file: `hdmi_top.vhd`.
+The first step in building the Pong game is to set up HDMI output. To do this, we have to instatiate all of our pre-built modules in the top-level file: `hdmi_top.vhd`. We will instatiate our PLL IP core: `pll_74mhz` as a component. Then we will instatiate the local pre-written modules: `video_timing`, `i2c_config`, and `renderer` as entities.
 
 ---
-|Back: [Phase-Locked Loop IP core](../set_up/02_phase_locked_loop.md) | [Top](../README.md) |Next: [Add Phase-Locked Loop to Top-Level File](04_instatiate_pll.md)|
+|Back: [IP Core - Phase-Locked Loop](../set_up/02_phase_locked_loop.md) | [Top](../README.md) |Next: [Instantiating Components](04_instatiate_pll.md)|
 |---|---|---|

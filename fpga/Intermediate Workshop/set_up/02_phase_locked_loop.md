@@ -1,6 +1,6 @@
-# Phase-Locked Loop IP core
+# IP Core - Phase-Locked Loop
 
-In this part, we will learn how to set up an IP core from the Altera IP library. 
+In this part, we will learn how to set up an IP core from the Altera IP library. An IP core is a pre-built component that can be used in a project. This will be explained more in detail as we go  through this workshop. 
 
 ## What is an IP Core?
 Intellectual property (IP) cores are reusable logic components for use in FPGA/IC/ASIC design that are the intellectual property of another party. 
@@ -9,9 +9,9 @@ Designers can obtain a license to use IP cores for use in their designs, offerin
 
 Intel Quartus Prime Light comes packaged with a small library of IP cores with varying licenses. The included IP cores include cores for DSP, interface protocols, among others. It also includes the Nios family of soft-core processors; these are customizable processors implemented in HDL for the Altera family of FPGAs. 
 
-## Why do we need a Phase-Locked Loop?
+## Phase-Locked Loops (PLLs)
 
-Several logic components we use in this workshop require a 74.25MHz clock. However, the development board we are using only includes a 50MHz internal clock. To generate a 74.25MHz signal from the provided 50MHz signal, we will use a device called a phase-locked loop (PLL). 
+Several logic components we use in this workshop require a 74.25MHz clock such as for video timing, I2C communication, and pixel rendering. However, the development board we are using only includes a 50MHz internal clock. To generate a 74.25MHz signal from the provided 50MHz signal, we will use a device called a phase-locked loop (PLL). 
 
 At its core, a PLL generates a clock that is in-phase with another clock. Using clock dividers to pre-scale the input and feedback, a PLL may generate new clock frequencies at their output that do not drift over time with respect to their input clocks. To learn more about PLLs, see [Appendix C](../appendices/appendix_c.md). 
 
@@ -66,7 +66,6 @@ Instead of writing this component from scratch, we can use a pre-built, pre-test
 You will instantiate and connect this PLL in a later step.
 
 ---
-Next: [Overview: Setting Up Video over HDMI](../video_hdmi/03_video_hdmi_overview.md)
 
 |Back: [Project setup](01_project_setup.md) | [Top](../README.md) |Next: [Overview: Setting Up Video over HDMI](../video_hdmi/03_video_hdmi_overview.md)|
 |---|---|---|

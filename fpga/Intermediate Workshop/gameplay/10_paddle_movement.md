@@ -46,7 +46,12 @@ You can use the clamp function in the architecture to bound a number between two
 ![clamp function](../assets/clamp.png)
 
 ----
-Compile and upload your code. This may take a while (around 10-12 mins). If you're successful, you will have a fully functional game of Pong!
+Compile and upload your code. This may take a while (around 10-12 mins). Once you're successful, you will have a fully functional game of Pong!
 
 ---
+## Congratulations!
+
+If you've finished the challenge, you have completed the FPGA Intermediate Workshop.
+Thank you, and we hope you learned something new!
+
 Back: [Drawing Game Objects](09_draw_objects.md)

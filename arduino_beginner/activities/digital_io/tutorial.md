@@ -135,6 +135,8 @@ You can test this by pressing and holding the button — the LED should remain l
 
 ## Aside - Multimeters
 
+**Please ask someone from the Ideas Clinic to come to your table to give you a multimeter.**
+
 A multimeter is a valuable tool for debugging and exploring how electricity flows in a circuit. Whether you’re using a handheld multimeter or a bench/tabletop multimeter, the basic functions are the same. Here’s how to measure resistance, voltage, and current in this project:
 
 

@@ -1,6 +1,6 @@
 # Drawing Game Objects
 
-In this step, we will use the module we wrote: `rect_display` to draw the ball and paddles for our game of Pong.
+In this step, we will use the `rect_display` module we wrote to draw the ball and paddles for our game of Pong.
 
 ## How to Draw Game Objects
 
@@ -8,7 +8,7 @@ In this step, we will use the module we wrote: `rect_display` to draw the ball a
 
 Open `renderer.vhd`.
 
-Remove `test_rect`, the signal `on_rect`, and their related logic in `renderer.vhd` because it was just a way to test if we're able to draw rectangles on our screen. 
+Remove `test_rect`, the signal `on_rect`, and their related logic because it was just a way to test if we're able to draw rectangles on our screen. 
 
 ### 2. Instantiate `game_logic` in `hdmi_top.vhd`
 
@@ -48,10 +48,10 @@ Here is a block diagram for `game_logic` you may find useful:
 
 Still in `hdmi_top.vhd`, we need to add all the game logic signals that we left out in previous steps to the `renderer` component in `hdmi_top.vhd`. 
 
-Your `renderer` instatiation statement should look like this now:  
+Your `renderer` instantiation statement should look like this now:  
 
 ````vhdl
--- renderer instatatioin
+-- renderer instantiation 
 renderer: entity work.renderer
 	port map(
 		hcount => hcount, 

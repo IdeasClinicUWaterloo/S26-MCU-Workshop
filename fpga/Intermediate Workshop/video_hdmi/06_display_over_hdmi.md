@@ -4,12 +4,12 @@ Now that the HDMI-related components have been instantiated, we need to connect 
 
 ## Background: ADV7513 HDMI encoder
 
-We use to I2C communication in this workshop for the ADV7513 HDMI encoder which is a chip on the FPGA board. This chip allows us to interface with an HDMI-enabled display. Over I2C communication, we send display data over a parallel interface (consisting of 24 bits of RGB data, horizontal and vertical sync signals, a pixel clock, and a data enable signal). 
+Our FPGA board uses an ADV7513 HDMI encoder to interface with an HDMI-enabled display. Using I2C communication protocols, we'll send over display data (consisting of 24 bits of RGB data, horizontal and vertical sync signals, a pixel clock, and a data enable signal) to our encoder. 
 
 ##  How to Connect Video Signals in `hdmi_top.vhd`
 Assign the output signals `hdmi_tx_de`, `hdmi_tx_hs`, `hdmi_tx_vs`, and `hdmi_tx_clk` to `de`, `hsync`, `vsync`, and `clk_pixel`, respectively in the **logic section** of the architecture body in `hdmi_top.vhd`.
 
-You can copy and paste this into the corresponding section: 
+You can copy and paste this into the logic section: 
 ````VHDL
 -- wiring HDMI tx to generated video signals
 hdmi_tx_de <= de;
@@ -32,7 +32,7 @@ You can use the RTL Viewer and compare your design to the screenshot below to ve
 
 With the HDMI system working, we will now write some logic to display a pattern over HDMI. We will use the provided `renderer` component to interface with the video timing signals and choose a color for each pixel on the display.
 
-### 1. Identify Where to Add Code in`renderer.vhd`
+### 1. Identify Where to Add Code in `renderer.vhd`
 
 Open `renderer.vhd` and go to down to its **process**. If you have forgotten how processes work in VHDL, you can refer [here](../../Introductory%20Workshop/Activities/activity_2.md#process). 
 
@@ -83,5 +83,5 @@ This screenshot is displaying the provided example test pattern but you can also
 Now that we've connect our FPGA board to our display, we can now start drawing objects!
 
 ---
-|Back: [Add Local VHDL files to Top-Level File](05_instatiate_local_vhdl.md) | [Top](../README.md) |Next: [Drawing Rectangles on the Screen](07_draw_rectangles.md)|
+|Back: [Instantiating Entities](05_instatiate_local_vhdl.md) | [Top](../README.md) |Next: [Drawing Rectangles on the Screen](07_draw_rectangles.md)|
 |---|---|---|

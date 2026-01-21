@@ -19,7 +19,7 @@ In this coordinate system, `(0,0)` is the top-left corner of the screen. The x-a
 
 ### 1. Create `rect_display.vhd`
 
-In Quartus, create a new VHDL file in the current project called `rect_display.vhd`. If you have forgotten how to create new VHDL refer [here](../../Introductory%20Workshop/01_project_setup.md#create-a-new-vhdl-file). 
+In Quartus, create a new VHDL file in the current project called `rect_display.vhd`. If you have forgotten how to create new VHDL refer to the Create a New VHDL File section [here](../../Introductory%20Workshop/01_project_setup.md#create-a-new-vhdl-file). 
 
 ### 2. Write VHDL for `rect_display` 
 
@@ -89,7 +89,7 @@ Notice that in `renderer.vhd`, we've already provided the component definition f
 
 You must now create a signal to store the `lit` output from `rect_display`
 
-This can be copied and pasted into the corresponding section: 
+This can be copied and pasted into the declaration section: 
 ````vhdl
 signal on_rect : STD_LOGIC;
 ````
@@ -97,7 +97,7 @@ signal on_rect : STD_LOGIC;
 ### 2.3 Instantiate `rect_display` component
 You need to now write the instantiation for a copy of your rectangle component (like you did for the PLL). 
 
-This can be copied and pasted into the corresponding section: 
+This can be copied and pasted into the logic section: 
 
 ````vhdl
 test_rect : rect_display
@@ -108,7 +108,7 @@ test_rect : rect_display
 ````
 
 As you do this, here are some things to keep in mind:
-- You can directory assign numeric values to the `x1`, `x2`, `y1`, and `y2` signals to draw your rectangle. 
+- You can directly assign numeric values to the `x1`, `x2`, `y1`, and `y2` signals to draw your rectangle. 
 
 Here is the block diagram that you may find useful: 
 
@@ -133,7 +133,7 @@ The above example has a rectangle with the following bounds:
 - `y2`: 540 pixels
 
 ---
-If you can successfully display a rectangle, continue to the next part to implement our Pong game!
+Once you can successfully display a rectangle, continue to the next part to implement our Pong game!
 
 ---
 

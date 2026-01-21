@@ -30,12 +30,12 @@ Each section will introduce you to several key concepts that will help you build
 
 ### Setting up 
 1. [Set up your project](set_up/01_project_setup.md)
-2. [Phase-Locked Loop IP core](set_up/02_phase_locked_loop.md)
+2. [IP Core - Phase-Locked Loop](set_up/02_phase_locked_loop.md)
 
 ### Setting Up Video over HDMI 
 3. [Overview: Setting Up Video over HDMI](video_hdmi/03_video_hdmi_overview.md)
-4. [Add Phase-Locked Loop to Top-Level File](video_hdmi/04_instatiate_pll.md)
-5. [Add Local VHDL files to Top-Level File](video_hdmi/05_instatiate_local_vhdl.md)
+4. [Instantiating Components](video_hdmi/04_instatiate_pll.md)
+5. [Instantiating Entities](video_hdmi/05_instatiate_local_vhdl.md)
 6. [Connecting the FPGA to an HDMI Monitor](video_hdmi/06_display_over_hdmi.md)
 7. [Drawing Rectangles on the Screen](video_hdmi/07_draw_rectangles.md)
 

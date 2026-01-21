@@ -1,4 +1,4 @@
-# Add Local VHDL files to Top-Level File
+# Instantiating Entities
 In this step, you will instantiate three local modules in `hdmi_top.vhd`:
 - `video_timing` 
 - `i2c_config` 
@@ -15,8 +15,13 @@ Unlike component instantiation, entity instantiation is a more direct way to use
 ![Entity instantiation syntax](../assets/entity_syntax.png)
 
 ### Key notes
-- We use the `work` library when we want to use the default local project library
-- The `generic map` can be omitted when using the entity’s default generic values
+- We use the `work` library when we want to use the default local project library. This is where all of our local files are compiled and can be referenced from.
+
+	You can find go to the dropdown for **Project Navigator** and select **Design Units** to view the `work` library directory for this project: 
+
+	![Entity instantiation syntax](../assets/work_lib.png)
+
+- The `generic map` can be omitted when using the entity’s default values. Generics act as constants in VHDL and you define them in `generic map`. For this project, we don't want to overwrite any of the constants in `video_timing`, `i2c_config`, etc. so we omit `generic map`. 
 
 ## How to instantiate `video_timing` in `hdmi_top.vhd`
 
@@ -28,9 +33,18 @@ The **entity declaration** in `video_timing` looks like this:
 
 ![Video timing entity code](../assets/video_timing_entity.png)
 
-Notice how the ports in the entity declaration match the input and outputs of the block diagram for `video_timing`
 
-![Video timing block diagram](../assets/video_timing_block_diagram.png)
+You should notice that the input signals for `video_timing` are: 
+- `clk`
+- `reset`
+
+Likewise, you should also note that the outputs for `video_timing` are: 
+- `hcount`
+- `vcount`
+- `hsync`
+- `vsync`
+- `de`
+- `frame_start` 
 
 ### 2. Set up input and output signals
 
@@ -38,7 +52,7 @@ In the **declaration section** , we need to add the inputs and outputs we identi
 
 We do **not** need to declare new signals for the `clk` and `reset` inputs. These will be connected later when instantiating the module. The clock and reset wiring will be explained in that step.
 
-You can copy and paste this into the corresponding section:
+You can copy and paste this into the declaration section:
 ````VHDL
 -- video timing signals
 signal hcount : INTEGER; -- current horizontal pixel position
@@ -51,7 +65,7 @@ signal hsync, vsync, de, frame_start : STD_LOGIC;
 In the **logic section**, copy and paste this instantiation: 
 
 ````VHDL
--- video timing instatatioin  
+-- video timing instantiation  
 video_timing: entity work.video_timing 
 	port map(
 		clk => clk_pixel, 
@@ -74,14 +88,21 @@ The same clock and reset is used for the other local components in the project, 
 
 ### 1. Instantiate `i2c_config` in `hdmi_top.vhd`
 
-Use the same steps that we went through for `video_timing` to instantiate `i2c_config`. 
+Use the same steps that we went through for `video_timing` to instantiate `i2c_config`.
 
 You should also know that we do **not** need to add new signals for the output of this component, instead we will connect the outputs of `i2c_config` to the existing signals: `i2c_scl` and `i2c_sda`.  
 
-This can be copied and pasted into the corresponding section: 
+This can be copied and pasted into the logic section: 
 ````VHDL
-scl => i2c_scl, 
-sda => i2c_sda
+-- i2c instantiation 
+i2c_config: entity work.i2c_config
+port map(
+	-- FILL IN the other two missing signals here
+
+	-- Mapping the outputs: scl and sda to existing internal signals: i2c_scl and i2c_sda
+	scl => i2c_scl, 
+	sda => i2c_sda
+); 
 ````
 
 Here is the block diagram for `i2c_config` to help you: 
@@ -90,7 +111,9 @@ Here is the block diagram for `i2c_config` to help you:
 
 #### Reminder: Clock and Reset Wiring
 - **All the local components** in this project use `clk_pixel` (the output of the PLL) as their `clk` input. 
-- **All local components** in this project use `(not pll_locked) or reset` as their `reset` input. 
+- **All local components** in this project use `(not pll_locked) or reset` as their `reset` input.
+
+If you want to learn more about I2C communication, please see [Appendix A](../appendices/appendix_a.md).
 
 ### 2. Instantiate `renderer` in `hdmi_top.vhd`
 
@@ -121,5 +144,5 @@ However, you can use the RTL Viewer and compare your design to the screenshot be
 
 ---
 
-|Back: [Add Phase-Locked Loop to Top-Level File](04_instatiate_pll.md) | [Top](../README.md) |Next: [Connecting the FPGA to an HDMI Monitor](06_display_over_hdmi.md)|
+|Back: [Instantiating Components](04_instatiate_pll.md) | [Top](../README.md) |Next: [Connecting the FPGA to an HDMI Monitor](06_display_over_hdmi.md)|
 |---|---|---|
