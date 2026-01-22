@@ -12,7 +12,23 @@ Unlike component instantiation, entity instantiation is a more direct way to use
 
 ### General Syntax
 
-![Entity instantiation syntax](../assets/entity_syntax.png)
+```vhdl
+instance_name: entity library.component_name
+	-- Parameters which can be passed to the instantiated entity to change its behaviour
+	-- These parameters are fixed during runtime.
+	generic map(
+		GENERIC1 => constant1,
+		GENERIC2 => constant2
+	)
+
+	-- Signals which are the inputs and outputs of the entity.
+	port map(
+		port_input => signal1,
+		port_output => signal2,
+		port_const_in => 0,
+		port_expr_in => not signal2
+	);
+```
 
 ### Key notes
 - We use the `work` library when we want to use the default local project library. This is where all of our local files are compiled and can be referenced from.
