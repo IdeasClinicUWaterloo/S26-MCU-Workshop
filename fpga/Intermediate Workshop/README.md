@@ -3,6 +3,10 @@ title: 'FPGA Intermediate Activity'
 author: 'Chris Rennick, Fareed Rasheed, Hailey Doleweerd, Orion Bruckman, Caitlyn Kwan, Nancy Nelson'
 ---
 
+> [!WARNING]
+> This is a complex workshop.
+> Please read each page completely from top to bottom before starting the work on that page.
+
 # Welcome to the FPGA Intermediate Workshop!
 
 In this workshop, you will build a functional version of Pong. You will combine several pre-built elements with your own VHDL to display patterns over HDMI, keep track of game objects and state, and render the game. By the end of this workshop, you should be able to: 
