@@ -15,7 +15,7 @@ component component_name is
     port(
 		input_a : in integer;
 		input_b : in integer;
-		output_x : out std_logic;
+		output_x : out std_logic
 	);
 end component;
 ```
