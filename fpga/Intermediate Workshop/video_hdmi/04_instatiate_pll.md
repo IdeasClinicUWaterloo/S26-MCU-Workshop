@@ -10,11 +10,34 @@ There are two parts to component instantiation: defining the component and insta
 
 ### Component Definition Syntax
 
-![Component Definition Syntax](../assets/comp_def_syntax.png)
+```vhdl
+component component_name is
+    port(
+		input_a : in integer;
+		input_b : in integer;
+		output_x : out std_logic;
+	);
+end component;
+```
+
+> [!NOTE]
+> VHDL is not case sensitive.
+> This means that writing `COMPONENT` is the same as writing `component`.
+> It also means that from the VHDL synthesis tool's perspective, the names `input_a`, `iNpUt_A`, and `INPUT_A` are referring to the same thing.
+> 
+> Only literals (constant declarations of strings and characters) are case sensitive.
+
 
 ### Component Instantiation Syntax
 
-![Component Instantiation Syntax](../assets/comp_instat_syntax.png)
+```vhdl
+unique_id : component_name
+	port map(
+		input_a => signal_a,
+		input_b => signal_b,
+		output_x => signal_x
+	);
+```
 
 ## How to Instantiate PLL in `hdmi_top.vhd`
 
@@ -25,7 +48,13 @@ In `hdmi_top.vhd`, the architecture body consists of:
 - A declaration section (before `begin`) for signals and component definitions
 - A logic section (between `begin` and `end`) for instantiation statements and signal assignments
 
-![Architecture Body Format](../assets/arch_body_format.png)
+```vhdl
+architecture structural of hdmi_top is
+	-- Declaration section: SIGNAL and COMPONENT declarations go here
+begin
+	-- Logic section: instantiation statements go here
+end structural;
+```
 
 ### 1. Write the Component Definition
 
