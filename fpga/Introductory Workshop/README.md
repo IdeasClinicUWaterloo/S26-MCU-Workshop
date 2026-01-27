@@ -11,8 +11,7 @@ This workshop will guide you through creating digital logic circuits, from simpl
 
 Please install Intel Quartus Prime Lite Edition
 
-If you haven't installed Quartus yet:
-[Click here for instructions on how to install Quartus Prime Lite](../Downloading_Quartus_&_Driver_Setup.docx)
+If you haven't installed Quartus yet, please [click here for instructions on how to install Quartus Prime Lite](../../quartus_setup/README.md).
 
 
 # We will provide
