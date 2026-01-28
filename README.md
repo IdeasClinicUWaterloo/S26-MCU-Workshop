@@ -12,3 +12,4 @@ Then, please click to access a specific workshop:
 - [Arduino Introductory Workshop](arduino_beginner/README.md)
 - [Arduino Intermediate Workshop](arduino_intermediate/README.md)
 - [FPGA Introductory Workshop](fpga/Introductory%20Workshop/README.md)
+- [FPGA Intermediate Workshop](fpga/Intermediate%20Workshop/README.md)
