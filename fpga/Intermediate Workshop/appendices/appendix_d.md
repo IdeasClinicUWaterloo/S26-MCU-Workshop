@@ -30,7 +30,7 @@ Drawing this state machine, we get the following:
 
 *Figure 2 - State diagram for pair detector*
 
-The diagram shown in Figure 2 can be interpreted by starting in state 00. For each bit received, follow the arrow with the received value to the next state. For example, in the number 110101001010, we'd start in state 00. When we receive the next 1, we transition to state 01. Then, the next 1 is received, changing the state to 11 (which outputs 1, a pair is detected!). This process continues as long as bits are received.
+The diagram shown in Figure 2 can be interpreted by starting in state 00. For each bit received, follow the arrow with the received value to the next state. For example, in the number **11**0101001010, we'd start in state 00. When we receive the next 1, we transition to state 01. Then, the next 1 is received, changing the state to 11 (which outputs 1, a pair is detected!). This process continues as long as bits are received.
 
 The full output of this state machine with the input "**11**0101000**11**0" is "0**1**00000000**1**0".
 
