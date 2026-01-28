@@ -54,3 +54,4 @@
 *sopc_*
 PLLJ_PLLSPE_INFO.txt # The generated PLL specification file
 W26-FPGA-MCU-Workshop/blob/main/Introductory Workshop/README.md
+.direnv/
