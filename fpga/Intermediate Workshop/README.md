@@ -48,5 +48,15 @@ Each section will introduce you to several key concepts that will help you build
 9. [Drawing Game Objects](gameplay/09_draw_objects.md)
 10. [Implement Paddle Movement](gameplay/10_paddle_movement.md)
 
+## Helpful Guides
+
+These appendices provide extra information about the parts that make up the Pong game.
+They're helpful if you want a deeper dive on what we are doing.
+
+11. [Appendix A: An overview of the I2C protocol](appendices/appendix_a.md)
+12. [Appendix B: Using the ADV7513 HDMI transmitter](appendices/appendix_b.md)
+13. [Appendix C: Getting started with phase-locked loops](appendices/appendix_c.md)
+14. [Appendix D: Getting started with state machines](appendices/appendix_d.md)
+
 ---
 Next: [Set up your project](set_up/01_project_setup.md)
