@@ -54,4 +54,4 @@ After you complete each activity, you will have the knowhow to create your own P
 4. [Activity 3: Pulse Width Modulation](activities/pulse_width_modulation/tutorial.md)
 
 ---
-Next: [Activity one, digital inputs and outputs](00_background.md)
+Next: [Background Information](00_background.md)
