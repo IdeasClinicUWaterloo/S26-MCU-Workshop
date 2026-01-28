@@ -22,7 +22,7 @@ A finite state machine can be completely defined by:
 
 A pair detector is a device used to identify pairs of 1s from a stream of incoming bits (i.e., we only have access to the next incoming bit in an ongoing sequence of bits). For example, in the stream of bits 110101000110 (arriving in order from left to right), there should only be two pairs identified: **11**0101000**11**0.
 
-To implement an FSM capable of detecting pairs, we'll first consider what possible states the machine should have. Since we're only detecting pairs of bits, our state machine only needs to encode the two latest bits we received as states. So, we'll create four states: 00, 01, 10, and 11. Then, we'll create transitions between the states based on what the most recently received bit is (e.g., if we're in state 01 and receive a 1, we'll transition to state 10). Then, we need to determine behavior for each of our states. A pair will only have been received if we're in state 11 (i.e., 2 consecutive 1's), so we'll make state 11 output 1 to indicate a pair, and the other three states output 0 to indicate no pair. We'll choose our initial state to be 00.
+To implement an FSM capable of detecting pairs, we'll first consider what possible states the machine should have. Since we're only detecting pairs of bits, our state machine only needs to encode the two latest bits we received as states. So, we'll create four states: 00, 01, 10, and 11. Then, we'll create transitions between the states based on what the most recently received bit is (e.g., if we're in state 00 and receive a 1, we'll transition to state 01). Then, we need to determine behavior for each of our states. A pair will only have been received if we're in state 11 (i.e., 2 consecutive 1's), so we'll make state 11 output 1 to indicate a pair, and the other three states output 0 to indicate no pair. We'll choose our initial state to be 00.
 
 Drawing this state machine, we get the following:
 
@@ -30,7 +30,9 @@ Drawing this state machine, we get the following:
 
 *Figure 2 - State diagram for pair detector*
 
-The diagram shown in Figure 2 can be interpreted by starting in state 00. For each bit received, follow the arrow with the received value to the next state. For example, in the number 110101001010, we'd start in state 00. When we receive the next 1, we transition to state 10. Then, the next 1 is received, changing the state to 11 (which outputs 1, a pair is detected!). This process continues as long as bits are received.
+The diagram shown in Figure 2 can be interpreted by starting in state 00. For each bit received, follow the arrow with the received value to the next state. For example, in the number 110101001010, we'd start in state 00. When we receive the next 1, we transition to state 01. Then, the next 1 is received, changing the state to 11 (which outputs 1, a pair is detected!). This process continues as long as bits are received.
+
+The full output of this state machine with the input "**11**0101000**11**0" is "0**1**00000000**1**0".
 
 A pair detector could be implemented in VHDL as follows:
 
