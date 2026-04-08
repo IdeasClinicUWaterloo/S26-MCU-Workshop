@@ -6,15 +6,20 @@ FPGAs (Field-Programmable Gate Arrays) are integrated circuits that can be confi
 
 This workshop will guide you through creating digital logic circuits, from simple gates to controlling a seven segment display.
 
-# Required Materials
 
-- Intel Quartus Prime Lite Edition installed
+# Before the workshop
+
+Please install Intel Quartus Prime Lite Edition
+
+If you haven't installed Quartus yet, please [click here for instructions on how to install Quartus Prime Lite](../../quartus_setup/README.md).
+
+
+# We will provide
+  
 - FPGA development board
 - USB cable for programming
 - Project files from this repository
 
-If you haven't installed Quartus yet:
-[Click here for instructions on how to install Quartus Prime Lite](../Downloading_Quartus_&_Driver_Setup.docx)
 
 # Table of Contents
 
