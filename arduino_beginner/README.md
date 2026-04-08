@@ -1,21 +1,18 @@
 ---
 title: 'Arduino Introduction Activity'
-author: 'Punit Shah, Karnan Thamilchelvan, Benjamin Zaionz, Avi 
-Bhadore, Michelle Chen, Silas Ifeanyi, Michael McPhee, Nancy 
-Nelson, Chris Rennick'
 ---
 
 # Welcome to the Arduino Introduction Activity!
 
 # Microcontrollers
 
-Microcontrollers are small one-chip computers that are at the core of much of today’s 
-technology to automate and control tasks. Generally, they have a Central Processing 
-Unit (CPU), some memory, and programmable input and output ports. This workshop 
-introduces you to the essentials of using an Arduino Uno, a popular microcontroller. 
-You’ll learn how to build and control simple digital and analog circuits, send and 
-receive data signals between devices, and generate Pulse Width Modulation (PWM) 
-signals to control external devices. In the process you’ll use breadboards, meters and 
+Microcontrollers are small one-chip computers that are at the core of much of today’s
+technology to automate and control tasks. Generally, they have a Central Processing
+Unit (CPU), some memory, and programmable input and output ports. This workshop
+introduces you to the essentials of using an Arduino Uno, a popular microcontroller.
+You’ll learn how to build and control simple digital and analog circuits, send and
+receive data signals between devices, and generate Pulse Width Modulation (PWM)
+signals to control external devices. In the process you’ll use breadboards, meters and
 scopes.
 
 # Required Materials
@@ -34,7 +31,7 @@ scopes.
 ### Note on computer compatibility
 The Arduino IDE does not support Windows operating systems running on a computer with the `ARM64` processor architecture. To check what your processor is on Windows, one way is to type the following into Command Prompt:
 
-``` shell
+```shell
 echo %PROCESSOR_ARCHITECTURE%
 ```
 
@@ -48,10 +45,17 @@ This workshop is broken up into four activities.
 Each activity will introduce you to one key concept.
 After you complete each activity, you will have the knowhow to create your own Pong game.
 
-1. [Background Information](00_background.md)
-2. [Activity 1: Digital Inputs and Outputs](activities/digital_io/tutorial.md)
-3. [Activity 2: Analog Inputs and UART](activities/analog_and_uart/tutorial.md)
-4. [Activity 3: Pulse Width Modulation](activities/pulse_width_modulation/tutorial.md)
+1. [Background Information](00_background.ipynb)
+2. [Activity 1: Digital Inputs and Outputs](activities/digital_io/tutorial.ipynb)
+3. [Activity 2: Analog Inputs and UART](activities/analog_and_uart/tutorial.ipynb)
+4. [Activity 3: Pulse Width Modulation](activities/pulse_width_modulation/tutorial.ipynb)
 
 ---
-Next: [Background Information](00_background.md)
+Next: [Background Information](00_background.ipynb)
+
+<details>
+<summary>Authors</summary>
+
+Punit Shah, Karnan Thamilchelvan, Benjamin Zaionz, Avi Bhadore, Michelle Chen, Silas Ifeanyi, Michael McPhee, Nancy Nelson, Chris Rennick
+
+</details>
