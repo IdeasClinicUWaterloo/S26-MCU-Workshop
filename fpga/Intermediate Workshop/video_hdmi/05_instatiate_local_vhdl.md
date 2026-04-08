@@ -133,7 +133,9 @@ If you want to learn more about I2C communication, please see [Appendix A](../ap
 
 ### 2. Instantiate `renderer` in `hdmi_top.vhd`
 
-Use the same steps that we went through for `video_timing` to instantiate `renderer` (Except clk and reset). 
+Use the same steps that we went through for `video_timing` to instantiate `renderer`. 
+
+We will set `clk` and `reset` for `renderer` the same way we did it for `video_timing` and `i2c_config`. 
 
 As you do this, here are some things to keep in mind:
 

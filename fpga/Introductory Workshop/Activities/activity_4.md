@@ -176,7 +176,7 @@ Now that the rest of the code is implemented, it's time to use the helper functi
 
 #### Displaying the Sign:
 
-Use the sign-generating function (the one that takes a sign bit and returns the corresponding 7-segment code for positive or negative).
+Use the sign-generating function (the one that takes a sign bit and returns the corresponding 7-segment code for "+" or "−").
 
 Apply this function to the signal that holds the sign bit (e.g., '0' for positive, '1' for negative).
 

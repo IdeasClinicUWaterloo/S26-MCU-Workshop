@@ -10,10 +10,6 @@ To drive the seven-segment display, a seven-digit binary number, formatted as "a
 HEX0 <= "gfedcba";
 ```
 
-> [!NOTE]
-> The letters refer to the order of the bits, not to the method of writing down numbers in hexadecimal.
->  "a" marks the position of the Least Significant bit and "g" marks the most significant bit.
-
 This code corresponds to the seven-segment display closest to the right side of the board. The display is active low, so to turn a segment on, it should be assigned a 0. So, to display the digit 7 we need to set segments 'a', 'b', and 'c' to low. To display this number on the rightmost display the instruction would be,
 
 ```vhdl
@@ -80,10 +76,7 @@ Use a series of if statements to determine which switch is turned on, giving pri
 
 Finally, ensure the output is assigned to the 7-segment display port HEX0, so the number appears on the screen.
 
-> [!IMPORTANT]
-> Even though your code will use signals  `sw(3) downto sw(0)` (sliding switch number three all the way to switch zero, **four switches in total**), our skeleton code will reassign those signals to `sw(7) downto sw(4)` instead.
->
-> **This means that you should test sliding switch 7 (`sw(7)`) on the physical board to see what happens when `sw(3)` is changed in your digital circuit.**
+#### **NOTE While you will be writing code to test from sw(3) downto sw(0), the top level file is going to shift these to sw(7) downto sw(4) when you're testing it on the physical board.
 
 ---
 
