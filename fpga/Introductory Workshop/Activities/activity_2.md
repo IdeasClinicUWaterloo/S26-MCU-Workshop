@@ -20,7 +20,8 @@ This code corresponds to the seven-segment display closest to the right side of 
 HEX0 <= "1111000";
 ```
 
-**NOTE regarding the use of quotation marks. For vectors, e.g., std_logic_vector, double quotation marks (") should be used, such as for driving the seven-segment display. For individual logic states, e.g., std_logic, single quotation marks (') are used.
+> [!NOTE]
+> Regarding the use of quotation marks. For vectors, e.g., std_logic_vector, double quotation marks (") should be used, such as for driving the seven-segment display. For individual logic states, e.g., std_logic, single quotation marks (') are used.
 
 ## Process
 
