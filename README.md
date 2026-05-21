@@ -1,6 +1,6 @@
-# Welcome to the W26 FPGA MCU Workshop!
+# Welcome to the S26 FPGA MCU Workshop!
 
-This workshop is hosted by the [University of Waterloo IDEAS Clinic](https://uwaterloo.ca/engineering-ideas-clinic/) for January 2026.
+This workshop is hosted by the [University of Waterloo IDEAS Clinic](https://uwaterloo.ca/engineering-ideas-clinic/) for May 2026.
 
 Please take a look at our setup instructions before starting our workshops:
 
