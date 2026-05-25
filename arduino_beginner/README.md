@@ -20,8 +20,8 @@ scopes.
 - 2 Switches (Push Button)
 - 2 LEDs
 - 1 Breadboard
-- 1 Resistors (220 Ω)
-- 1 Resistor (10 kΩ)
+- 2 Resistors (220 Ω)
+- 2 Resistor (10 kΩ)
 - 1 Potentiometer
 - 1 Oscilloscope
 - 1 Multimeter
