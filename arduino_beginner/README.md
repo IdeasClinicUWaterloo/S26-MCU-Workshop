@@ -17,7 +17,7 @@ scopes.
 
 # Required Materials
 
-- 2 Switches (Push Button)
+- 3 Push Button
 - 2 LEDs
 - 1 Breadboard
 - 2 Resistors (220 Ω)
