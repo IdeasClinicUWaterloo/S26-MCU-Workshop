@@ -16,7 +16,7 @@ These concepts will be used to create a simple, 2-player version of the game Pon
 - 1x Arduino UNO 
 - 1x OLED Display 
 - 1x Breadboard 
-- 5x Pushbuttons 
+- 3x Pushbuttons 
 - 12x Wires
 - 1x USB-C Cable 
 - Arduino IDE installed.
